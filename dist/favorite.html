@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Favorite App</title>
+</head>
+<style>
+  #fav-button {
+    background-color: transparent;
+    color: inherit;
+    border: none;
+    padding: 0;
+    outline: inherit;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border: solid 1px gray;
+    border-radius: 999rem;
+
+    &:before {
+      display: block;
+      content: '🤍';
+    }
+
+    &.is-liked {
+      &:before {
+        content: '❤️';
+      }
+    }
+  }
+</style>
+
+<body>
+
+  <fieldset>
+    <legend>ファイルリスト</legend>
+    <div id="file-list"></div>
+  </fieldset>
+
+  <fieldset>
+    <legend>ファイルを登録</legend>
+    <form id="regist-file">
+      <input type="file" name="file" accept="image/*" />
+      <button>ファイルをアップロード</button>
+    </form>
+  </fieldset>
+
+  <fieldset>
+    <legend>ファイルを表示</legend>
+    <form id="show-file">
+      <input type="text" name="path" placeholder="pathを入力してください" />
+      <button>ファイルを表示</button>
+    </form>
+    <div id="viewer"></div>
+  </fieldset>
+
+  <!-- Todoページへ遷移するボタン -->
+  <fieldset>
+    <legend>Todoページへ</legend>
+    <button id="go-to-todo">Todoページへ</button>
+  </fieldset>
+
+  <script type="module" src="favorite.js"></script>
+</body>
+
+</html>
